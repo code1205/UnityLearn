@@ -8,7 +8,7 @@ using XLua;
 
 namespace FrameWork.Game
 {
-    public class GameApplication : MonoBehaviour
+    public class GameApplication: MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
