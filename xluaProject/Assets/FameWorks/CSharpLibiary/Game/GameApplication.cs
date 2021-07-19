@@ -1,30 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using System.IO;
 using XLua;
 
-public class GameApplication : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        Init();
-    }
 
-    void awark()
+namespace FrameWork.Game
+{
+    public class GameApplication : MonoBehaviour
     {
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //初始化数据------------
-    void Init()
-    {    //test
-        LuaEnv luaenv = new LuaEnv();
-        luaenv.DoString("CS.UnityEngine.Debug.Log('hello world')");
-        luaenv.Dispose();
+        // Start is called before the first frame update
+        void Start()
+        {
+            Init();
+        }
+
+        void awark()
+        {
+            
+        }
+        // Update is called once per frame
+        void Update()
+        {
+            
+        }
+        //初始化数据------------
+        void Init()
+        {
+            // init lua
+            print("------");
+            LuaOperator.instance.init();
+        }
     }
 }
