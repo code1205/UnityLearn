@@ -26,12 +26,15 @@ namespace FrameWork.Game
         
         public void init()
         {
-//            byte[] sourceCode = AssetLoader.instance.LoadLuaFile(filePath);
-//            LuaEnv luaenv = new LuaEnv();
-//            object[] returns = luaenv.DoString(sourceCode, filePath);
-//            LuaTable  mLuaAppTable = returns[0] as LuaTable;
-//            UnityEngine.Debug.Log(mLuaAppTable.ToString());
-            require(filePath);
+            byte[] sourceCode;
+            if (AssetLoader.instance.LoadLuaFile(filePath, out sourceCode) == false)
+            {
+                return;
+            }
+            LuaEnv luaenv = new LuaEnv();
+            object[] returns = luaenv.DoString(sourceCode, filePath);
+            LuaTable  mLuaAppTable = returns[0] as LuaTable;
+            UnityEngine.Debug.Log(mLuaAppTable.ToString());
         }
         
         public void update()
@@ -49,18 +52,5 @@ namespace FrameWork.Game
             
         }
 
-        public void require(string filePath)
-        {
-            byte[] sourceCode;
-            if (AssetLoader.instance.LoadLuaFile(ref filePath, out sourceCode) == false)
-            {
-                return;
-            }
-            LuaEnv luaenv = new LuaEnv();
-            object[] returns = luaenv.DoString(sourceCode, filePath);
-            LuaTable  mLuaAppTable = returns[0] as LuaTable;
-            UnityEngine.Debug.Log(mLuaAppTable.ToString());
-        }
-        
     }
 }

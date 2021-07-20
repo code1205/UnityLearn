@@ -5,7 +5,6 @@ using UnityEngine;
 using System.IO;
 using XLua;
 
-
 namespace FrameWork.Game
 {
     public class GameApplication: MonoBehaviour

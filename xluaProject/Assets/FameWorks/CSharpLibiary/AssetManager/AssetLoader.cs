@@ -20,7 +20,7 @@ namespace FrameWork.AssetManager
             }
         }
 
-        public bool LoadLuaFile(ref string filePath, out byte[] sourceCode)
+        public bool LoadLuaFile(string filePath, out byte[] sourceCode)
         {
             string abFilePath = Application.dataPath + filePath;
             if (File.Exists(abFilePath))

@@ -11,22 +11,26 @@ g = g or {__loaded = {}}
 ori_require = ori_require or require
 require = (function (oriRequire)
 	return  function (name)
-				if not g.__loaded[name] then -- 记录已经北京require的
+				if not g.__loaded[name] then -- 标记被加载的文件
 					g.__loaded[name] = 0
 				end
 			return oriRequire(name)
 			end
 end)(ori_require)
 
------- 
+------------------------------------------
 local LuaApplication = {}
-
+--
 function LuaApplication.init()
-	
+	require("Initer")
+end
+-- 
+function LuaApplication.start()
+	-- body
 end
 
 function LuaApplication.update()
-	-- body
+	
 end
 
 function LuaApplication.quit()
