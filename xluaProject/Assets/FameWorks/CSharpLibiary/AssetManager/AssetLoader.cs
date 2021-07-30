@@ -2,7 +2,7 @@ using UnityEngine;
 using System.IO;
 using XLua;
 // AssetLoader.cs 
-namespace FrameWork.AssetManager
+namespace FrameWorks.AssetManager
 {
     
     public class AssetLoader
@@ -19,10 +19,10 @@ namespace FrameWork.AssetManager
                 return _instance;
             }
         }
-
-        public bool LoadLuaFile(string filePath, out byte[] sourceCode)
+        
+        //加载lua文件 filePath 绝对路径
+        public bool LoadLuaFile(string abFilePath, out byte[] sourceCode)
         {
-            string abFilePath = Application.dataPath + filePath;
             if (File.Exists(abFilePath))
             {
                 sourceCode = File.ReadAllBytes(abFilePath);
@@ -32,5 +32,8 @@ namespace FrameWork.AssetManager
             sourceCode = null;
             return false;
         }
+        //加载prafab
+        
+        
     }
 }

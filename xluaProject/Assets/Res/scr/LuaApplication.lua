@@ -19,6 +19,7 @@ require = (function (oriRequire)
 end)(ori_require)
 
 ------------------------------------------
+-- CS
 local LuaApplication = {}
 --
 function LuaApplication.init()
